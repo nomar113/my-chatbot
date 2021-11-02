@@ -1,0 +1,40 @@
+Main:
+Illustration Tagger
+https://algorithmia.com/algorithms/deeplearning/IllustrationTagger (many input file formats)
+https://algorithmia.com/algorithms/deeplearning/CaffeNet (many input file formats)
+
+https://algorithmia.com/algorithms/deeplearning/ObjectDetectionCOCO (URL - long time response)
+https://algorithmia.com/algorithms/PetiteProgrammer/ImageClassifier (just URL)
+https://algorithmia.com/algorithms/algorithmiahq/pytorchDemo/docs (['plane', 'car', 'bird', 'cat', 'deer', 'dog', 'frog', 'horse', 'ship', 'truck'] - Image Data API Url)
+https://algorithmia.com/algorithms/yavuzkomecoglu/VQA/docs (question dependency - Image Data API Url)
+
+
+
+Car:
+https://algorithmia.com/algorithms/LgoBE/CarMakeandModelDetection
+https://algorithmia.com/algorithms/jpizarrom/deepanpr (Number Plate Recognition)
+
+Person:
+Nudity Detection
+NudityDetectioni2v
+https://algorithmia.com/algorithms/deeplearning/EmotionRecognitionCNNMBP
+https://algorithmia.com/algorithms/deeplearning/AgeClassification
+https://algorithmia.com/algorithms/deeplearning/GenderClassification
+https://algorithmia.com/algorithms/deeplearning/CrowdCounter (count the number of people in an image)
+https://algorithmia.com/algorithms/mheimann/RecognizeFaces (compare with famous)
+https://algorithmia.com/algorithms/dlib/FaceDetection
+https://algorithmia.com/algorithms/guardlogic/AdultImageClassifier
+https://algorithmia.com/algorithms/coqnitics/fashion_style 
+https://algorithmia.com/algorithms/algorithmiahq/DeepFashion
+
+
+Text:
+https://algorithmia.com/algorithms/ocr/RecognizeCharacterss
+
+Space:
+https://algorithmia.com/algorithms/deeplearning/Places365Classifier
+https://algorithmia.com/algorithms/deeplearning/RealEstateClassifier (fraca)
+
+Fish:
+https://algorithmia.com/algorithms/igloro/fishident
+

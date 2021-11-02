@@ -1,12 +1,9 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
 
-const path = require('path');
-
 const dotenv = require('dotenv');
 // Import required bot configuration.
-const ENV_FILE = path.join(__dirname, '.env');
-dotenv.config({ path: ENV_FILE });
+dotenv.config();
 
 const restify = require('restify');
 
@@ -15,7 +12,7 @@ const restify = require('restify');
 const { BotFrameworkAdapter } = require('botbuilder');
 
 // This bot's main dialog.
-const { EchoBot } = require('./bot');
+const { RecognizeImageBot } = require('./bots/RecognizeImageBot');
 
 // Create HTTP server
 const server = restify.createServer();
@@ -56,7 +53,7 @@ const onTurnErrorHandler = async (context, error) => {
 adapter.onTurnError = onTurnErrorHandler;
 
 // Create the main dialog.
-const myBot = new EchoBot();
+const myBot = new RecognizeImageBot();
 
 // Listen for incoming requests.
 server.post('/api/messages', (req, res) => {
