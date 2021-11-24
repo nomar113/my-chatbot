@@ -14,6 +14,9 @@ const { BotFrameworkAdapter } = require('botbuilder');
 // This bot's main dialog.
 const { RecognizeImageBot } = require('./bots/RecognizeImageBot');
 
+const appInsights = require('applicationinsights');
+appInsights.setup(process.env.InstrumentationKey).start();
+
 // Create HTTP server
 const server = restify.createServer();
 server.listen(process.env.port || process.env.PORT || 3978, () => {

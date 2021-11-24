@@ -18,6 +18,7 @@
     },
     "dependencies": {
         "algorithmia": "^0.3.10",
+        "applicationinsights": "^2.1.9",
         "axios": "^0.24.0",
         "botbuilder": "~4.14.0",
         "dotenv": "~8.2.0",
