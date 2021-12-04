@@ -35,12 +35,35 @@ class RecognizeImageBot extends ActivityHandler {
 
             await context.sendActivity(MessageFactory.text(JSON.stringify(illustrationTaggerContent)));
 
+            console.log(illustrationTaggerContent.general);
+            const terms = [];
+
+            illustrationTaggerContent.general.map((item) => {
+                terms.push(Object.keys(item)[0]);
+            });
+
+            console.log(terms);
+
+            const translate = await axios.post('https://api.us-south.language-translator.watson.cloud.ibm.com/instances/635c3c0f-f172-405e-8aab-6f7f56332d90/v3/translate?version=2018-05-01', {
+                text: terms, model_id: 'en-pt'
+            }, {
+                'Content-Type': 'application/json',
+                auth: {
+                    username: 'apikey',
+                    password: process.env.IBM_WATSON_API_KEY
+                }
+            });
+
+            for (let i = 0; i < terms.length; i++) {
+                await context.sendActivity(MessageFactory.text(translate.data.translations[i].translation + ' ' + Object.values(illustrationTaggerContent.general[i])[0] + '\n'));
+            }
+
             await next();
         });
 
         this.onMembersAdded(async (context, next) => {
             const membersAdded = context.activity.membersAdded;
-            const welcomeText = 'Hello and welcome!';
+            const welcomeText = 'Envie uma imagem para análise!';
             for (let cnt = 0; cnt < membersAdded.length; ++cnt) {
                 if (membersAdded[cnt].id !== context.activity.recipient.id) {
                     await context.sendActivity(MessageFactory.text(welcomeText, welcomeText));
